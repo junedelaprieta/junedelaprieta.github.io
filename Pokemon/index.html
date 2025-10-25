@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tipos Pokémon</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* 💅️ Sugerencias básicas para una mejor visualización */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    input#search {
+      padding: 10px;
+      width: 250px;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffcb05;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #ffde4d;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .type-table {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    #types-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .type-cell {
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+      background-color: #e4e4e4;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .type-cell:hover {
+      background-color: #dcdcdc;
+    }
+
+    .type-cell.weak {
+      background-color: #ff6b6b; /* 🔴 Débil */
+      color: white;
+    }
+
+    .type-cell.resist {
+      background-color: #4cd137; /* 🟢 Resistente */
+      color: white;
+    }
+
+    .type-cell.immune {
+      background-color: #2f3640; /* ⚫ Inmune */
+      color: white;
+    }
+
+    .pokemon-info {
+      flex: 2;
+      min-width: 300px;
+      padding: 15px;
+      border-left: 2px solid #ddd;
+    }
+
+    h3 {
+      margin-top: 20px;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    .highlight {
+      outline: 2px solid #ffcb05;
+      background-color: #fff176 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Busca un Pokémon o tipo..." />
+      <button id="search-btn">Buscar</button>
+      <button id="clear-btn">Limpiar</button>
+    </div>
+
+    <b>🔴 Débil — 🟢 Resistente — ⚫ Inmune</b>
+    <br/><br/>
+
+    <div class="content">
+      <div class="type-table">
+        <h3>Tipos</h3>
+        <div id="types-list">
+          <div class="type-cell" data-type="normal">Normal</div>
+          <div class="type-cell" data-type="fire">Fuego</div>
+          <div class="type-cell" data-type="water">Agua</div>
+          <div class="type-cell" data-type="electric">Eléctrico</div>
+          <div class="type-cell" data-type="grass">Planta</div>
+          <div class="type-cell" data-type="ice">Hielo</div>
+          <div class="type-cell" data-type="fighting">Lucha</div>
+          <div class="type-cell" data-type="poison">Veneno</div>
+          <div class="type-cell" data-type="ground">Tierra</div>
+          <div class="type-cell" data-type="flying">Volador</div>
+          <div class="type-cell" data-type="psychic">Psíquico</div>
+          <div class="type-cell" data-type="bug">Bicho</div>
+          <div class="type-cell" data-type="rock">Roca</div>
+          <div class="type-cell" data-type="ghost">Fantasma</div>
+          <div class="type-cell" data-type="dragon">Dragón</div>
+          <div class="type-cell" data-type="dark">Siniestro</div>
+          <div class="type-cell" data-type="steel">Acero</div>
+          <div class="type-cell" data-type="fairy">Hada</div>
+        </div>
+      </div>
+
+      <!-- 🧩 Aquí aparecerá la información del Pokémon -->
+      <div id="pokemon-info" class="pokemon-info">
+        <p style="color:#888;">🔍 Busca un Pokémon o un tipo para empezar...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

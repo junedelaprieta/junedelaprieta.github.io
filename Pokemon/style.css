@@ -1,0 +1,52 @@
+.type-cell {
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: inline-block;
+  min-width: 80px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: default;
+}
+
+/* 🔹 Colores según relación */
+.type-cell.weak {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+}
+
+.type-cell.resist {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: #fff;
+}
+
+.type-cell.immune {
+  background: linear-gradient(135deg, #555, #333);
+  color: #fff;
+}
+
+/* Efecto hover */
+.type-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Opcional: efecto de relieve interno para un toque extra */
+.type-cell::after {
+  content: '';
+  display: block;
+  height: 4px;
+  margin-top: 4px;
+  border-radius: 0 0 12px 12px;
+  background: rgba(255,255,255,0.15);
+}
+/* ✨ Resaltado al buscar por tipo */
+.type-cell.highlight {
+  border: 3px solid gold;
+  box-shadow: 0 0 10px gold;
+  transform: scale(1.05);
+}
